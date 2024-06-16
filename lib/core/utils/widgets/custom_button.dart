@@ -18,7 +18,7 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return GestureDetector(
-      onTap: () {},
+      onTap: onTap,
       child: Container(
         height: 50.h,
         decoration: BoxDecoration(

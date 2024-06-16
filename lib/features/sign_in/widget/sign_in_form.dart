@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:furniture_shop_app_ui/features/sign_up/sign_up_screen.dart';
 
 import '../../../core/utils/widgets/custom_button.dart';
 import '../../../core/utils/widgets/custom_text_field.dart';
@@ -49,7 +50,17 @@ class SignInForm extends StatelessWidget {
                 SizedBox(height: 30.h),
                 CustomButton(text: 'Log in', onTap: () {}),
                 SizedBox(height: 15.h),
-                CustomButton(text: 'SIGN UP', isMain: false, onTap: () {}),
+                CustomButton(
+                    text: 'SIGN UP',
+                    isMain: false,
+                    onTap: () {
+                      debugPrint('Sign up');
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SignUpScreen()),
+                      );
+                    }),
               ],
             ),
           ),
