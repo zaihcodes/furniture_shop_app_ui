@@ -1,40 +1,53 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({
-    super.key,
-    required this.text,
-    this.bgColor,
-    this.textColor = Colors.white,
-    this.fontSize = 18,
-    this.textStyle,
-    this.onTap,
-  });
+  const CustomButton(
+      {required this.text,
+      this.isMain = true,
+      this.hasBorder = false,
+      this.onTap,
+      super.key});
 
   final String text;
-  final Color? bgColor;
-  final Color textColor;
-  final double? fontSize;
-  final TextStyle? textStyle;
   final Function()? onTap;
+  final bool isMain;
+  final bool hasBorder;
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return GestureDetector(
-      onTap: onTap,
+      onTap: () {},
       child: Container(
-        height: 54,
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+        height: 50.h,
         decoration: BoxDecoration(
-          color: theme.colorScheme.primary,
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: Text(
-          text,
-          style: (textStyle ?? theme.textTheme.bodyMedium)!.copyWith(
-            fontSize: fontSize ?? 18,
-            color: textColor,
+            color: isMain ? theme.colorScheme.scrim : theme.colorScheme.surface,
+            borderRadius: BorderRadius.circular(10),
+            border: hasBorder
+                ? Border.all(
+                    width: 1,
+                    color: theme.colorScheme.secondary.withOpacity(.05))
+                : null,
+            boxShadow: isMain
+                ? [
+                    BoxShadow(
+                      color: theme.colorScheme.shadow.withOpacity(0.5),
+                      spreadRadius: 0,
+                      blurRadius: 5,
+                      offset: Offset(0, 3),
+                    )
+                  ]
+                : []),
+        child: Center(
+          child: Text(
+            text,
+            style: theme.textTheme.bodyLarge!.copyWith(
+              color: isMain
+                  ? theme.colorScheme.surface
+                  : theme.colorScheme.primary,
+              fontWeight: FontWeight.w600,
+            ),
           ),
         ),
       ),

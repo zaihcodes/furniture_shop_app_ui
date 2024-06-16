@@ -5,9 +5,11 @@ class AppTheme {
     colorScheme: ColorScheme.fromSeed(
       brightness: Brightness.light,
       seedColor: Color(0xFF242424),
+      surface: Color(0xFFFFFFFF),
       primary: Color(0xFF242424),
       secondary: Color(0xFF808080),
-      tertiary: Color(0xFFB3B3B3),
+      tertiary: Color(0xFF909090),
+      // tertiary: Color(0xFFB3B3B3),
     ),
     textTheme: buildTextTheme(),
   );
@@ -52,14 +54,17 @@ class AppTheme {
       bodyLarge: TextStyle(
         fontFamily: 'NunitoSans',
         fontSize: 18,
+        color: Color(0xFF909090),
       ),
       bodyMedium: TextStyle(
         fontFamily: 'NunitoSans',
         fontSize: 14,
+        color: Color(0xFF909090),
       ),
       bodySmall: TextStyle(
         fontFamily: 'NunitoSans',
         fontSize: 12,
+        color: Color(0xFF909090),
       ),
     );
   }

@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:furniture_shop_app_ui/core/utils/widgets/custom_button.dart';
+import 'package:furniture_shop_app_ui/core/utils/widgets/welcome_button.dart';
+import 'package:furniture_shop_app_ui/features/sign_in/sign_in_screen.dart';
 
-class OnboardingScreen extends StatelessWidget {
+class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
 
+  @override
+  State<OnboardingScreen> createState() => _OnboardingScreenState();
+}
+
+class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -52,9 +58,16 @@ class OnboardingScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 150),
                   Center(
-                    child: CustomButton(
+                    child: WelcomeButtom(
                       text: 'Get Started',
                       textStyle: theme.textTheme.displaySmall,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SignInScreen()),
+                        );
+                      },
                     ),
                   ),
                 ],
