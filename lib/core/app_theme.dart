@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 class AppTheme {
   static ThemeData light = ThemeData(
     colorScheme: ColorScheme.fromSeed(
-      seedColor: Color(0xFF242424),
       brightness: Brightness.light,
+      seedColor: Color(0xFF242424),
+      primary: Color(0xFF242424),
+      secondary: Color(0xFF808080),
+      tertiary: Color(0xFFB3B3B3),
     ),
     textTheme: buildTextTheme(),
   );
@@ -12,7 +15,10 @@ class AppTheme {
   static ThemeData dark = ThemeData(
     colorScheme: ColorScheme.fromSeed(
       seedColor: Color(0xFF242424),
-      brightness: Brightness.dark,
+      brightness: Brightness.light,
+      // primary: Color(0xFF242424),
+      // secondary: Color(0xFF808080),
+      // tertiary: Color(0xFFB3B3B3),
     ),
     textTheme: buildTextTheme(),
   );
@@ -25,7 +31,7 @@ class AppTheme {
       ),
       displayMedium: TextStyle(
         fontFamily: 'Merriweather',
-        fontSize: 36,
+        fontSize: 30,
       ),
       displaySmall: TextStyle(
         fontFamily: 'Merriweather',
@@ -45,7 +51,7 @@ class AppTheme {
       ),
       bodyLarge: TextStyle(
         fontFamily: 'NunitoSans',
-        fontSize: 16,
+        fontSize: 18,
       ),
       bodyMedium: TextStyle(
         fontFamily: 'NunitoSans',

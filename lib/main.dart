@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:furniture_shop_app_ui/core/app_theme.dart';
 
+import 'features/onboarding/onboarding_screen.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -25,10 +27,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text('Go', style: Theme.of(context).textTheme.displayLarge),
-      ),
-    );
+    return OnboardingScreen();
   }
 }
