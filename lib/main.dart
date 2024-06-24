@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:furniture_shop_app_ui/core/app_theme.dart';
 
+import 'features/home_screen.dart';
 import 'features/onboarding/onboarding_screen.dart';
 
 void main() {
@@ -19,17 +20,9 @@ class MyApp extends StatelessWidget {
         theme: AppTheme.light,
         darkTheme: AppTheme.dark,
         themeMode: ThemeMode.light,
+        // home: OnboardingScreen();
         home: const HomeScreen(),
       ),
     );
-  }
-}
-
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return OnboardingScreen();
   }
 }
