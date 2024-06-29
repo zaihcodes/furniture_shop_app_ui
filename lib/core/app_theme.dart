@@ -54,17 +54,17 @@ class AppTheme {
       bodyLarge: TextStyle(
         fontFamily: 'NunitoSans',
         fontSize: 18,
-        color: Color(0xFF909090),
+        color: Color(0xFF808080),
       ),
       bodyMedium: TextStyle(
         fontFamily: 'NunitoSans',
-        fontSize: 14,
-        color: Color(0xFF909090),
+        fontSize: 16,
+        color: Color(0xFF808080),
       ),
       bodySmall: TextStyle(
         fontFamily: 'NunitoSans',
         fontSize: 12,
-        color: Color(0xFF909090),
+        color: Color(0xFF808080),
       ),
     );
   }
