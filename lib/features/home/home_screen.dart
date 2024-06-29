@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:furniture_shop_app_ui/core/data/product_data.dart';
 import 'package:furniture_shop_app_ui/features/home/widgets/category_list_widget.dart';
+import 'package:furniture_shop_app_ui/features/home/widgets/product_grid_view.dart';
 
 import 'models/category_model.dart';
 
@@ -23,15 +25,20 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       appBar: buildHomeAppBar(theme),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            SizedBox(height: 20.h),
-            CategoryListWidget(),
-            SizedBox(height: 20.h),
-          ],
-        ),
+      body: Column(
+        children: [
+          SizedBox(height: 20.h),
+          CategoryListWidget(),
+          SizedBox(height: 10.h),
+          buildProductGridView()
+        ],
       ),
+    );
+  }
+
+  Expanded buildProductGridView() {
+    return Expanded(
+      child: ProductGridView(),
     );
   }
 
@@ -55,26 +62,24 @@ class _HomeScreenState extends State<HomeScreen> {
             _isSearching
                 ? Expanded(child: _buildSearchField())
                 : Expanded(
-                    child: Expanded(
-                      child: Column(
-                        children: [
-                          SizedBox(height: 15),
-                          Text(
-                            'Make home',
-                            style: theme.textTheme.titleLarge!.copyWith(
-                              color: theme.colorScheme.secondary,
-                              fontWeight: FontWeight.w500,
-                            ),
+                    child: Column(
+                      children: [
+                        SizedBox(height: 15),
+                        Text(
+                          'Make home',
+                          style: theme.textTheme.titleLarge!.copyWith(
+                            color: theme.colorScheme.secondary,
+                            fontWeight: FontWeight.w500,
                           ),
-                          Text(
-                            'BEAUTIFUL',
-                            style: theme.textTheme.titleLarge!.copyWith(
-                              color: theme.colorScheme.primary,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          )
-                        ],
-                      ),
+                        ),
+                        Text(
+                          'BEAUTIFUL',
+                          style: theme.textTheme.titleLarge!.copyWith(
+                            color: theme.colorScheme.primary,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        )
+                      ],
                     ),
                   ),
             IconButton(

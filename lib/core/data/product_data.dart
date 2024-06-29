@@ -16,7 +16,7 @@ class ProductData {
       price: 25.00,
       rating: 4.5,
       review: 50,
-      imagePath: 'assets/images/minimal_stand.png',
+      imagePath: 'assets/images/minimal _stand.png',
       description:
           'Minimal Stand is made of by natural wood. The design that is very simple and minimal. This is truly one of the best furnitures in any family for now. With 3 different colors, you can easily select the best match for your home. ',
     ),
