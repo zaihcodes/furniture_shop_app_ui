@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/models/product_model.dart';
+import '../../product/product_screen.dart';
 
 class ProductGridViewItem extends StatelessWidget {
   const ProductGridViewItem({
@@ -16,9 +17,13 @@ class ProductGridViewItem extends StatelessWidget {
     final theme = Theme.of(context);
     return GestureDetector(
       onTap: () {
-        // Navigator.push(context,
-        // MaterialPageRoute(builder: (context)=>ProductScreen()),
-        // );
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => ProductScreen(
+                    product: product,
+                  )),
+        );
       },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
