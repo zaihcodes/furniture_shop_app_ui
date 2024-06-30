@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:furniture_shop_app_ui/core/app_theme.dart';
+import 'package:furniture_shop_app_ui/main_screen.dart';
 
 import 'features/home/home_screen.dart';
 import 'features/onboarding/onboarding_screen.dart';
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
         darkTheme: AppTheme.dark,
         themeMode: ThemeMode.light,
         // home: OnboardingScreen();
-        home: const HomeScreen(),
+        // home: const HomeScreen(),
+        home: const MainScreen(),
       ),
     );
   }
