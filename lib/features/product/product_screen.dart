@@ -78,7 +78,7 @@ class ProductScreen extends StatelessWidget {
                                     .withOpacity(0.2),
                                 borderRadius: BorderRadius.circular(10),
                               ),
-                              child: Image.asset('assets/icons/plus.png'),
+                              child: Image.asset('assets/icons/minus.png'),
                             ),
                           ),
                         ],

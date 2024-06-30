@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:furniture_shop_app_ui/core/data/product_data.dart';
 import 'package:furniture_shop_app_ui/core/utils/widgets/custom_button.dart';
+import 'package:furniture_shop_app_ui/features/cart/cart_screen.dart';
 import 'package:furniture_shop_app_ui/features/product/widget/favorite_product_list.dart';
 
 class FavoriteProductsScreen extends StatelessWidget {
@@ -20,7 +21,15 @@ class FavoriteProductsScreen extends StatelessWidget {
             const Expanded(
               child: FavoriteProductsList(),
             ),
-            const CustomButton(text: 'Add all to my cart'),
+            CustomButton(
+              text: 'Add all to my cart',
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => CartScreen()),
+                );
+              },
+            ),
             SizedBox(height: 20.h),
           ],
         ),
