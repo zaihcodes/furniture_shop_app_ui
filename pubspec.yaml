@@ -53,6 +53,6 @@ flutter:
         - asset: assets/fonts/Gelasio-Bold.ttf
     - family: NunitoSans
       fonts:
-        - asset: assets/fonts/NunitoSans.ttf
-        - asset: assets/fonts/NunitoSans_Bold.ttf
+        - asset: assets/fonts/NunitoSans-Regular.ttf
+        - asset: assets/fonts/NunitoSans-Bold.ttf
           weight: 700
