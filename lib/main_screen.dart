@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:furniture_shop_app_ui/features/home/home_screen.dart';
+import 'package:furniture_shop_app_ui/features/product/favorite_products_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -12,7 +13,7 @@ class _MainScreenState extends State<MainScreen> {
   int _currentScreen = 0;
   final List<Widget> _screens = [
     HomeScreen(),
-    Center(child: Text('Favorites Products')),
+    FavoriteProductsScreen(),
     Center(child: Text('Notifications')),
     Center(child: Text('Profile')),
   ];
@@ -32,7 +33,9 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Scaffold(
+      backgroundColor: theme.colorScheme.surface,
       body: _screens[_currentScreen],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
