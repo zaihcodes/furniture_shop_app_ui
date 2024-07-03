@@ -13,7 +13,7 @@ class FavoriteProductsScreen extends StatelessWidget {
     final theme = Theme.of(context);
     return Scaffold(
       backgroundColor: theme.colorScheme.surface,
-      appBar: buildFavoriteAppBar(theme),
+      appBar: buildFavoriteAppBar(theme, context),
       body: Padding(
         padding: EdgeInsets.only(left: 20, right: 20, top: 20),
         child: Column(
@@ -37,13 +37,21 @@ class FavoriteProductsScreen extends StatelessWidget {
     );
   }
 
-  AppBar buildFavoriteAppBar(ThemeData theme) {
+  AppBar buildFavoriteAppBar(ThemeData theme, BuildContext context) {
     return AppBar(
       backgroundColor: theme.colorScheme.surface,
       elevation: 0,
       leading: Image.asset('assets/icons/search.png'),
       actions: [
-        Image.asset('assets/icons/cart.png'),
+        IconButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => CartScreen()),
+            );
+          },
+          icon: Image.asset('assets/icons/cart.png'),
+        ),
         SizedBox(width: 10.w),
       ],
       title: Text(

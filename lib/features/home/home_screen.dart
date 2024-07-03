@@ -5,6 +5,7 @@ import 'package:furniture_shop_app_ui/core/data/product_data.dart';
 import 'package:furniture_shop_app_ui/features/home/widgets/category_list_widget.dart';
 import 'package:furniture_shop_app_ui/features/home/widgets/product_grid_view.dart';
 
+import '../cart/cart_screen.dart';
 import 'models/category_model.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -83,12 +84,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
             IconButton(
-              icon: Image.asset(
-                'assets/icons/cart.png',
-              ),
               onPressed: () {
-                // Handle cart icon press
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => CartScreen()),
+                );
               },
+              icon: Image.asset('assets/icons/cart.png'),
             ),
           ],
         ),

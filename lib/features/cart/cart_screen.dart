@@ -12,7 +12,7 @@ class CartScreen extends StatelessWidget {
     final theme = Theme.of(context);
     return Scaffold(
       backgroundColor: theme.colorScheme.surface,
-      appBar: buildCartAppBar(theme),
+      appBar: buildCartAppBar(theme, context),
       body: Padding(
         padding: EdgeInsets.only(left: 20, right: 20, top: 20),
         child: Column(
@@ -104,11 +104,16 @@ class CartScreen extends StatelessWidget {
     );
   }
 
-  AppBar buildCartAppBar(ThemeData theme) {
+  AppBar buildCartAppBar(ThemeData theme, BuildContext context) {
     return AppBar(
       backgroundColor: theme.colorScheme.surface,
       elevation: 0,
-      leading: Image.asset('assets/icons/arrow_back.png'),
+      leading: IconButton(
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        icon: Image.asset('assets/icons/arrow_back.png'),
+      ),
       title: Text(
         'My cart',
         style: theme.textTheme.titleMedium,
