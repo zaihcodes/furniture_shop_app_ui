@@ -22,7 +22,7 @@ class NotificationData {
         title: 'Discover hot sale furnitures this week.',
         description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Turpis pretium et in arcu adipiscing nec. Turpis pretium et in arcu adipiscing nec. ',
-        status: notStatus.defaultOne,
+        status: notStatus.hotOne,
         imagePath: 'assets/images/simple_desk.png',
         viewed: true,
         hasImage: false),
@@ -45,7 +45,7 @@ class NotificationData {
       description:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Turpis pretium et in arcu adipiscing nec. Turpis pretium et in arcu adipiscing nec. ',
       status: notStatus.defaultOne,
-      imagePath: 'assets/images/simple_desk.png.png',
+      imagePath: 'assets/images/simple_desk.png',
     ),
   ];
 }

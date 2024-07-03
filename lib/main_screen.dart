@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:furniture_shop_app_ui/features/home/home_screen.dart';
+import 'package:furniture_shop_app_ui/features/notification/notification_screen.dart';
 import 'package:furniture_shop_app_ui/features/product/favorite_products_screen.dart';
 
 class MainScreen extends StatefulWidget {
@@ -14,7 +15,7 @@ class _MainScreenState extends State<MainScreen> {
   final List<Widget> _screens = [
     HomeScreen(),
     FavoriteProductsScreen(),
-    Center(child: Text('Notifications')),
+    NotificationScreen(),
     Center(child: Text('Profile')),
   ];
 
