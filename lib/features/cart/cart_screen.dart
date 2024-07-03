@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:furniture_shop_app_ui/features/cart/check_out_screen.dart';
 import 'package:furniture_shop_app_ui/features/cart/widgets/cart_products_list.dart';
+import 'package:furniture_shop_app_ui/features/cart/widgets/custom_cart_app_bar.dart';
 
 import '../../core/utils/widgets/custom_button.dart';
 
@@ -12,7 +14,10 @@ class CartScreen extends StatelessWidget {
     final theme = Theme.of(context);
     return Scaffold(
       backgroundColor: theme.colorScheme.surface,
-      appBar: buildCartAppBar(theme, context),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(56),
+        child: CustomCartAppBar(title: 'My cart'),
+      ),
       body: Padding(
         padding: EdgeInsets.only(left: 20, right: 20, top: 20),
         child: Column(
@@ -34,10 +39,10 @@ class CartScreen extends StatelessWidget {
             CustomButton(
               text: 'Check out',
               onTap: () {
-                // Navigator.push(
-                // context,
-                // MaterialPageRoute(builder: (context) => CartScreen()),
-                // );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => CheckOutScreen()),
+                );
               },
             ),
             SizedBox(height: 20.h),
@@ -101,24 +106,6 @@ class CartScreen extends StatelessWidget {
           ),
         ),
       ],
-    );
-  }
-
-  AppBar buildCartAppBar(ThemeData theme, BuildContext context) {
-    return AppBar(
-      backgroundColor: theme.colorScheme.surface,
-      elevation: 0,
-      leading: IconButton(
-        onPressed: () {
-          Navigator.pop(context);
-        },
-        icon: Image.asset('assets/icons/arrow_back.png'),
-      ),
-      title: Text(
-        'My cart',
-        style: theme.textTheme.titleMedium,
-      ),
-      centerTitle: true,
     );
   }
 }
