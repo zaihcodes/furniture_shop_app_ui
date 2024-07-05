@@ -25,9 +25,7 @@ class CustomButton extends StatelessWidget {
             color: isMain ? theme.colorScheme.scrim : theme.colorScheme.surface,
             borderRadius: BorderRadius.circular(10),
             border: hasBorder
-                ? Border.all(
-                    width: 1,
-                    color: theme.colorScheme.secondary.withOpacity(.05))
+                ? Border.all(width: 1, color: theme.colorScheme.secondary)
                 : null,
             boxShadow: isMain
                 ? [
