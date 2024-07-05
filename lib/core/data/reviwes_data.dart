@@ -4,7 +4,7 @@ class ReviwesData {
   static List<ReviewModel> reviwes = [
     ReviewModel(
       client: 'Zaih Codes',
-      clientImg: 'assets/persons/view1.png',
+      clientImg: 'assets/persons/view3.png',
       ratingStar: 5,
       date: '20/03/2024',
       review:

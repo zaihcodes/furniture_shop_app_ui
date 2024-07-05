@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:furniture_shop_app_ui/core/models/product_model.dart';
 import 'package:furniture_shop_app_ui/core/utils/widgets/custom_button.dart';
+import 'package:furniture_shop_app_ui/features/product/product_review_screen.dart';
 import 'package:furniture_shop_app_ui/features/product/widget/product_banner.dart';
 
 class ProductScreen extends StatelessWidget {
@@ -102,14 +103,26 @@ class ProductScreen extends StatelessWidget {
                         ),
                       ),
                       SizedBox(width: 15.w),
-                      Text(
-                        '(${product.review} reviews)',
-                        style: theme.textTheme.bodyMedium!.copyWith(
-                            color: Colors.grey, fontWeight: FontWeight.w700),
-                      ),
+                      TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ProductReviewScreen(
+                                  product: product,
+                                ),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            '(${product.review} reviews)',
+                            style: theme.textTheme.bodyMedium!.copyWith(
+                                color: Colors.grey,
+                                fontWeight: FontWeight.w700),
+                          )),
                     ],
                   ),
-                  SizedBox(height: 10.h),
+                  // SizedBox(height: 10.h),
                   Text(
                     product.description,
                     style: theme.textTheme.bodyMedium!.copyWith(
