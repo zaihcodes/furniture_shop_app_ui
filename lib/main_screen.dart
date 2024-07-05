@@ -11,7 +11,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  int _currentScreen = 0;
+  late int _currentScreen;
   final List<Widget> _screens = [
     HomeScreen(),
     FavoriteProductsScreen(),
@@ -30,6 +30,12 @@ class _MainScreenState extends State<MainScreen> {
     setState(() {
       _currentScreen = index;
     });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _currentScreen = 0;
   }
 
   @override

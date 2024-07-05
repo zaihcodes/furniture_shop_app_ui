@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:furniture_shop_app_ui/core/utils/widgets/custom_button.dart';
+import 'package:furniture_shop_app_ui/features/cart/success_check_order_screen.dart';
 import 'package:furniture_shop_app_ui/features/cart/widgets/cards_widgets.dart';
 import 'package:furniture_shop_app_ui/features/cart/widgets/check_out_card_title.dart';
 import 'package:furniture_shop_app_ui/features/cart/widgets/check_out_detail.dart';
-import 'package:furniture_shop_app_ui/features/cart/widgets/custom_card_shadow.dart';
 import 'package:furniture_shop_app_ui/features/cart/widgets/custom_cart_app_bar.dart';
 
 class CheckOutScreen extends StatelessWidget {
@@ -39,7 +39,16 @@ class CheckOutScreen extends StatelessWidget {
             SizedBox(height: 15.h),
             CheckOutDetail(),
             SizedBox(height: 15.h),
-            CustomButton(text: 'SUBMIT ORDER'),
+            CustomButton(
+              text: 'SUBMIT ORDER',
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => SuccessCheckOrderScreen()),
+                );
+              },
+            ),
           ],
         ),
       ),
