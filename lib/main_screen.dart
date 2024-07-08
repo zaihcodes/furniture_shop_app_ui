@@ -17,7 +17,7 @@ class _MainScreenState extends State<MainScreen> {
     const HomeScreen(),
     const FavoriteProductsScreen(),
     const NotificationScreen(),
-    ProfileScreen(),
+    const ProfileScreen(),
   ];
 
   final List<String> _bottomNavItems = [

@@ -20,7 +20,7 @@ class ProductReviewScreen extends StatelessWidget {
     final theme = Theme.of(context);
     return Scaffold(
       backgroundColor: theme.colorScheme.surface,
-      appBar: CustomSimpleAppBar(context, theme),
+      appBar: CustomSimpleAppBar(context, theme, title: 'Rating & review'),
       body: Padding(
         padding: EdgeInsets.all(20),
         child: Column(

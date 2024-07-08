@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:furniture_shop_app_ui/features/profile/my_orders_screen.dart';
 import 'package:furniture_shop_app_ui/features/profile/widgets/profile_item_catd.dart';
 import 'package:furniture_shop_app_ui/features/profile/widgets/profile_user_info.dart';
 
@@ -18,8 +19,16 @@ class ProfileScreen extends StatelessWidget {
           children: [
             const ProfileUserInfo(),
             SizedBox(height: 20.h),
-            const ProfileItemCard(
-                title: 'My orders', subTitle: 'Already have 10 orders'),
+            ProfileItemCard(
+              title: 'My orders',
+              subTitle: 'Already have 10 orders',
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MyOrdersScreen()),
+                );
+              },
+            ),
             const ProfileItemCard(
                 title: 'Shipping Addresses', subTitle: '03 Addresses'),
             const ProfileItemCard(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-AppBar CustomSimpleAppBar(BuildContext context, ThemeData theme) {
+AppBar CustomSimpleAppBar(BuildContext context, ThemeData theme,
+    {required String title}) {
   return AppBar(
     backgroundColor: theme.colorScheme.surface,
     elevation: 0,
@@ -12,7 +13,7 @@ AppBar CustomSimpleAppBar(BuildContext context, ThemeData theme) {
       },
     ),
     title: Text(
-      'Rating & review',
+      title,
       style: theme.textTheme.titleMedium,
     ),
     centerTitle: true,
