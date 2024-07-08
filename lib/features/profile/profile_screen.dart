@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:furniture_shop_app_ui/features/profile/my_orders_screen.dart';
+import 'package:furniture_shop_app_ui/features/profile/shipping_address_screen.dart';
 import 'package:furniture_shop_app_ui/features/profile/widgets/profile_item_catd.dart';
 import 'package:furniture_shop_app_ui/features/profile/widgets/profile_user_info.dart';
 
@@ -29,8 +30,17 @@ class ProfileScreen extends StatelessWidget {
                 );
               },
             ),
-            const ProfileItemCard(
-                title: 'Shipping Addresses', subTitle: '03 Addresses'),
+            ProfileItemCard(
+              title: 'Shipping Addresses',
+              subTitle: '03 Addresses',
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ShippingAddressScreen()),
+                );
+              },
+            ),
             const ProfileItemCard(
                 title: 'Payment Method', subTitle: 'You have 2 cards'),
             const ProfileItemCard(
