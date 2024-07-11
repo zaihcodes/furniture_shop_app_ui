@@ -2,8 +2,8 @@
 ### FREE UI KIT
 
 
-### Designer
-    <a href="https://buymeacoffee.com/bruno.design">Bruno</a>
+### Designer (buymeacoffee profile)
+[Bruno](https://buymeacoffee.com/bruno.design)
 
 
 ## Screens
