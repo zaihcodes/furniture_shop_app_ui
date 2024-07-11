@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:furniture_shop_app_ui/features/profile/my_orders_screen.dart';
+import 'package:furniture_shop_app_ui/features/profile/my_reviews_screen.dart';
 import 'package:furniture_shop_app_ui/features/profile/payment_methode_screen.dart';
 import 'package:furniture_shop_app_ui/features/profile/shipping_address_screen.dart';
 import 'package:furniture_shop_app_ui/features/profile/widgets/profile_item_catd.dart';
@@ -54,8 +55,17 @@ class ProfileScreen extends StatelessWidget {
                 );
               },
             ),
-            const ProfileItemCard(
-                title: 'My reviews', subTitle: 'Reviews for 5 item'),
+            ProfileItemCard(
+              title: 'My reviews',
+              subTitle: 'Reviews for 5 item',
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const MyReviewsScreen()),
+                );
+              },
+            ),
             const ProfileItemCard(
                 title: 'Setting',
                 subTitle: 'Notification, Password, FAQ, Contact'),
