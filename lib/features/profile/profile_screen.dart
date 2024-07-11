@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:furniture_shop_app_ui/features/profile/my_orders_screen.dart';
+import 'package:furniture_shop_app_ui/features/profile/payment_methode_screen.dart';
 import 'package:furniture_shop_app_ui/features/profile/shipping_address_screen.dart';
 import 'package:furniture_shop_app_ui/features/profile/widgets/profile_item_catd.dart';
 import 'package:furniture_shop_app_ui/features/profile/widgets/profile_user_info.dart';
@@ -26,7 +27,8 @@ class ProfileScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => MyOrdersScreen()),
+                  MaterialPageRoute(
+                      builder: (context) => const MyOrdersScreen()),
                 );
               },
             ),
@@ -37,12 +39,21 @@ class ProfileScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => ShippingAddressScreen()),
+                      builder: (context) => const ShippingAddressScreen()),
                 );
               },
             ),
-            const ProfileItemCard(
-                title: 'Payment Method', subTitle: 'You have 2 cards'),
+            ProfileItemCard(
+              title: 'Payment Method',
+              subTitle: 'You have 2 cards',
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const PaymentMethodeScreen()),
+                );
+              },
+            ),
             const ProfileItemCard(
                 title: 'My reviews', subTitle: 'Reviews for 5 item'),
             const ProfileItemCard(
