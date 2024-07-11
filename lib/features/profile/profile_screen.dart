@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:furniture_shop_app_ui/features/profile/my_orders_screen.dart';
 import 'package:furniture_shop_app_ui/features/profile/my_reviews_screen.dart';
 import 'package:furniture_shop_app_ui/features/profile/payment_methode_screen.dart';
+import 'package:furniture_shop_app_ui/features/profile/setting_screen.dart';
 import 'package:furniture_shop_app_ui/features/profile/shipping_address_screen.dart';
 import 'package:furniture_shop_app_ui/features/profile/widgets/profile_item_catd.dart';
 import 'package:furniture_shop_app_ui/features/profile/widgets/profile_user_info.dart';
@@ -66,9 +67,17 @@ class ProfileScreen extends StatelessWidget {
                 );
               },
             ),
-            const ProfileItemCard(
-                title: 'Setting',
-                subTitle: 'Notification, Password, FAQ, Contact'),
+            ProfileItemCard(
+              title: 'Setting',
+              subTitle: 'Notification, Password, FAQ, Contact',
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const SettingScreen()),
+                );
+              },
+            ),
           ],
         ),
       ),
